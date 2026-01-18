@@ -118,8 +118,16 @@ if (-not $NoZip) {
                     Write-Host "  Copied directory: $include" -ForegroundColor Gray
                 }
                 else {
-                    Copy-Item -Path $SourcePath -Destination $DestPath -Force
-                    Write-Host "  Copied file: $include" -ForegroundColor Gray
+                    # For module.json, ensure it's saved without BOM
+                    if ($include -eq "module.json") {
+                        $content = Get-Content $SourcePath -Raw
+                        [System.IO.File]::WriteAllText($DestPath, $content, [System.Text.UTF8Encoding]::new($false))
+                        Write-Host "  Copied file: $include (without BOM)" -ForegroundColor Gray
+                    }
+                    else {
+                        Copy-Item -Path $SourcePath -Destination $DestPath -Force
+                        Write-Host "  Copied file: $include" -ForegroundColor Gray
+                    }
                 }
             }
             else {

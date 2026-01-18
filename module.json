@@ -1,38 +1,38 @@
 {
-  "id": "crucible-of-fate",
-  "title": "Crucible of Fate",
-  "description": "A visual, interactive system for Mark Hulmes' Crucible of Fate mechanic. Features communal dice pools, player roll augmentation, and comprehensive GM controls.",
-  "version": "0.1.2",
-  "compatibility": {
-    "minimum": "11",
-    "verified": "12"
-  },
-  "authors": [
-    {
-      "name": "Your Name"
-    }
-  ],
-  "esmodules": [
-    "scripts/state.js",
-    "scripts/socket.js",
-    "scripts/rollAugmentation.js",
-    "scripts/ui/cruciblePanel.js",
-    "scripts/ui/moveDiceModal.js",
-    "scripts/ui/seedModal.js",
-    "scripts/main.js"
-  ],
-  "styles": [
-    "styles/crucible.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    }
-  ],
-  "socket": true,
-  "url": "https://github.com/alge4/Cruicible_of_Fate-Module",
-  "manifest": "https://raw.githubusercontent.com/alge4/Cruicible_of_Fate-Module/main/module.json",
-  "download": "https://github.com/alge4/Cruicible_of_Fate-Module/releases/download/v0.1.2/crucible-of-fate-v0.1.2.zip"
+    "id":  "crucible-of-fate",
+    "title":  "Crucible of Fate",
+    "description":  "A visual, interactive system for Mark Hulmes\u0027 Crucible of Fate mechanic. Features communal dice pools, player roll augmentation, and comprehensive GM controls.",
+    "version":  "0.1.4",
+    "compatibility":  {
+                          "minimum":  "11",
+                          "verified":  "12"
+                      },
+    "authors":  [
+                    {
+                        "name":  "Your Name"
+                    }
+                ],
+    "esmodules":  [
+                      "scripts/state.js",
+                      "scripts/socket.js",
+                      "scripts/rollAugmentation.js",
+                      "scripts/ui/cruciblePanel.js",
+                      "scripts/ui/moveDiceModal.js",
+                      "scripts/ui/seedModal.js",
+                      "scripts/main.js"
+                  ],
+    "styles":  [
+                   "styles/crucible.css"
+               ],
+    "languages":  [
+                      {
+                          "lang":  "en",
+                          "name":  "English",
+                          "path":  "lang/en.json"
+                      }
+                  ],
+    "socket":  true,
+    "url":  "https://github.com/alge4/Cruicible_of_Fate-Module",
+    "manifest":  "https://raw.githubusercontent.com/alge4/Cruicible_of_Fate-Module/main/module.json",
+    "download":  "https://github.com/alge4/Cruicible_of_Fate-Module/releases/download/v0.1.3/crucible-of-fate-v0.1.3.zip"
 }
