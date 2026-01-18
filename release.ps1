@@ -44,16 +44,19 @@ Write-Host "Current version: $CurrentVersion" -ForegroundColor Cyan
 $NewVersion = $CurrentVersion
 if ($Version) {
     $NewVersion = $Version
-} elseif ($Patch) {
+}
+elseif ($Patch) {
     $parts = $CurrentVersion.Split('.')
     $parts[2] = [int]$parts[2] + 1
     $NewVersion = $parts -join '.'
-} elseif ($Minor) {
+}
+elseif ($Minor) {
     $parts = $CurrentVersion.Split('.')
     $parts[1] = [int]$parts[1] + 1
     $parts[2] = 0
     $NewVersion = $parts -join '.'
-} elseif ($Major) {
+}
+elseif ($Major) {
     $parts = $CurrentVersion.Split('.')
     $parts[0] = [int]$parts[0] + 1
     $parts[1] = 0
@@ -66,8 +69,9 @@ if ($NewVersion -ne $CurrentVersion) {
     Write-Host "Updating version to: $NewVersion" -ForegroundColor Green
     $ModuleJson.version = $NewVersion
     $ModuleJson | ConvertTo-Json -Depth 10 | Set-Content $ModuleJsonPath -Encoding UTF8
-    Write-Host "✓ module.json updated" -ForegroundColor Green
-} else {
+    Write-Host "module.json updated" -ForegroundColor Green
+}
+else {
     Write-Host "Using current version: $NewVersion" -ForegroundColor Yellow
 }
 
@@ -91,19 +95,6 @@ if (-not $NoZip) {
         "module.json"
     )
     
-    # Files/directories to exclude
-    $ExcludePaths = @(
-        ".git",
-        ".gitignore",
-        "node_modules",
-        "release",
-        "*.ps1",
-        "*.md",
-        "package*.json",
-        ".vscode",
-        ".idea"
-    )
-    
     Write-Host "Creating release zip..." -ForegroundColor Cyan
     
     # Create temp directory
@@ -118,7 +109,8 @@ if (-not $NoZip) {
                 $DestPath = Join-Path $TempDir $include
                 if (Test-Path $SourcePath -PathType Container) {
                     Copy-Item -Path $SourcePath -Destination $DestPath -Recurse -Force
-                } else {
+                }
+                else {
                     Copy-Item -Path $SourcePath -Destination $DestPath -Force
                 }
             }
@@ -132,7 +124,7 @@ if (-not $NoZip) {
         Compress-Archive -Path "$TempDir\*" -DestinationPath $ZipPath -Force
         
         $ZipSize = (Get-Item $ZipPath).Length / 1KB
-        Write-Host "✓ Release zip created: $ZipPath ($([math]::Round($ZipSize, 2)) KB)" -ForegroundColor Green
+        Write-Host "Release zip created: $ZipPath ($([math]::Round($ZipSize, 2)) KB)" -ForegroundColor Green
         
         # Show next steps
         Write-Host ""
@@ -144,8 +136,8 @@ if (-not $NoZip) {
         Write-Host "3. Update module.json URLs if needed:"
         Write-Host "   manifest: https://raw.githubusercontent.com/yourusername/repo/main/module.json"
         Write-Host "   download: https://github.com/yourusername/repo/releases/download/v$NewVersion/$ZipName"
-        
-    } finally {
+    }
+    finally {
         # Cleanup temp directory
         if (Test-Path $TempDir) {
             Remove-Item $TempDir -Recurse -Force
