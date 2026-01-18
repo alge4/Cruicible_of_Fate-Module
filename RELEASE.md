@@ -53,26 +53,44 @@ Since you're working on v0.1, use patch versions for iterations:
 2. **Creates a zip file** in the `release/` directory
 3. **Excludes dev files** (.git, node_modules, etc.)
 4. **Includes only necessary files** (scripts, templates, styles, lang, module.json)
+5. **Automatically creates GitHub release** (if GitHub CLI is installed and authenticated)
+6. **Updates module.json URLs** automatically (manifest, download, url)
 
-## GitHub Release Steps
+## GitHub Release (Automatic)
 
-After running the release script:
+The script will automatically create a GitHub release if:
+- GitHub CLI (`gh`) is installed
+- You're authenticated (`gh auth login`)
+- The repository is detected from git remote
 
-1. **Test the zip** in your local Foundry instance
-2. **Create a GitHub release**:
-   ```bash
-   # Using GitHub CLI
-   gh release create v0.1.1 release/crucible-of-fate-v0.1.1.zip --title "v0.1.1" --notes "Release notes"
-   
-   # OR manually upload via GitHub web interface
-   ```
-3. **Update module.json URLs** (if hosting on GitHub):
-   ```json
-   {
-     "manifest": "https://raw.githubusercontent.com/yourusername/repo/main/module.json",
-     "download": "https://github.com/yourusername/repo/releases/download/v0.1.1/crucible-of-fate-v0.1.1.zip"
-   }
-   ```
+### With Release Notes
+```powershell
+.\release.ps1 -Patch -ReleaseNotes "Fixed critical bug in dice pool calculation"
+```
+
+### Skip GitHub Release
+```powershell
+.\release.ps1 -Patch -NoGitHub
+```
+
+### Manual GitHub Release (if automatic fails)
+
+If automatic release creation fails, you can create it manually:
+
+```bash
+# Using GitHub CLI
+gh release create v0.1.1 release/crucible-of-fate-v0.1.1.zip --title "v0.1.1" --notes "Release notes"
+
+# OR manually upload via GitHub web interface
+```
+
+## Setup GitHub CLI
+
+1. **Install GitHub CLI**: https://cli.github.com/
+2. **Authenticate**: `gh auth login`
+3. **Verify**: `gh auth status`
+
+The script will automatically detect your repository from the git remote URL.
 
 ## Version Numbering
 
