@@ -1,0 +1,61 @@
+<div class="crucible-panel">
+  <header class="crucible-header">
+    <h3>{{localize "crucible.title"}}</h3>
+  </header>
+  
+  <div class="crucible-pools">
+    <!-- Player Pool -->
+    <div class="crucible-pool crucible-pool-player">
+      <h4>{{localize "crucible.playerPool"}}</h4>
+      <div class="crucible-dice-display">
+        {{#each playerDice}}
+          <i class="fas fa-dice-d6 crucible-die"></i>
+        {{/each}}
+        {{#if playerOverflow}}
+          <span class="crucible-overflow">+{{playerOverflow}}</span>
+        {{/if}}
+      </div>
+      <div class="crucible-count">{{localize "crucible.players"}}: {{playerPoolCount}}</div>
+    </div>
+
+    <!-- GM Pool -->
+    <div class="crucible-pool crucible-pool-gm">
+      <h4>{{localize "crucible.gmPool"}}</h4>
+      <div class="crucible-dice-display">
+        {{#each gmDice}}
+          <i class="fas fa-dice-d6 crucible-die"></i>
+        {{/each}}
+        {{#if gmOverflow}}
+          <span class="crucible-overflow">+{{gmOverflow}}</span>
+        {{/if}}
+      </div>
+      <div class="crucible-count">{{localize "crucible.gm"}}: {{gmPoolCount}}</div>
+    </div>
+  </div>
+
+  <!-- Totals -->
+  <div class="crucible-totals">
+    <span>{{localize "crucible.total"}}: {{totalDice}}</span>
+  </div>
+
+  <!-- GM Controls -->
+  {{#if isGM}}
+    <div class="crucible-controls">
+      <button type="button" class="crucible-btn crucible-btn-invoke" data-action="invoke">
+        <i class="fas fa-fire"></i> {{localize "crucible.buttons.invokeCrucible"}}
+      </button>
+      <button type="button" class="crucible-btn crucible-btn-move" data-action="move">
+        <i class="fas fa-exchange-alt"></i> {{localize "crucible.buttons.moveDice"}}
+      </button>
+      <button type="button" class="crucible-btn crucible-btn-roll" data-action="rollGmDie">
+        <i class="fas fa-dice"></i> {{localize "crucible.buttons.rollGmDie"}}
+      </button>
+      <button type="button" class="crucible-btn crucible-btn-override" data-action="override" data-override="{{overrideEnabled}}">
+        <i class="fas fa-unlock-alt"></i> {{#if overrideEnabled}}{{localize "crucible.override.enabled"}}{{else}}{{localize "crucible.override.disabled"}}{{/if}}
+      </button>
+      <button type="button" class="crucible-btn crucible-btn-reset" data-action="reset">
+        <i class="fas fa-redo"></i> {{localize "crucible.buttons.resetPools"}}
+      </button>
+    </div>
+  {{/if}}
+</div>

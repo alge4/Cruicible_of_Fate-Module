@@ -1,0 +1,70 @@
+{
+  "crucible": {
+    "title": "Crucible of Fate",
+    "playerPool": "Player Pool",
+    "gmPool": "GM Pool",
+    "total": "Total",
+    "players": "Players",
+    "gm": "GM",
+    "buttons": {
+      "invokeCrucible": "Invoke Crucible",
+      "moveDice": "Move Dice…",
+      "rollGmDie": "Roll GM Die",
+      "overrideToggle": "Override Toggle",
+      "resetPools": "Reset Pools",
+      "spendGmDie": "Spend GM Die",
+      "spendWithoutTransfer": "Spend without transfer"
+    },
+    "moveDice": {
+      "title": "Move Dice",
+      "direction": "Direction",
+      "playerToGm": "Player → GM",
+      "gmToPlayer": "GM → Player",
+      "amount": "Amount",
+      "submit": "Move",
+      "cancel": "Cancel",
+      "error": {
+        "insufficientDice": "Not enough dice in source pool",
+        "invalidAmount": "Amount must be at least 1"
+      }
+    },
+    "seed": {
+      "title": "Invoke the Crucible",
+      "instruction": "Enter your seed result (1-6) or roll:",
+      "roll": "Roll",
+      "enter": "Enter",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "waiting": "Waiting for other players to seed...",
+      "complete": "All players have seeded. The Crucible is active!",
+      "error": {
+        "invalidRange": "Result must be between 1 and 6",
+        "alreadySeeded": "You have already seeded"
+      }
+    },
+    "augment": {
+      "contextMenu": "Invoke Crucible (+1d6)",
+      "chatMessage": "Crucible invoked: +1d6 = {result}",
+      "newTotal": "New total: {total}",
+      "error": {
+        "insufficientDice": "Player Pool is empty",
+        "invalidRoll": "This roll cannot be augmented",
+        "alreadyAugmented": "This roll has already been augmented",
+        "notMostRecent": "You can only augment your most recent roll"
+      }
+    },
+    "override": {
+      "enabled": "Override Mode Enabled",
+      "disabled": "Override Mode Disabled",
+      "hint": "When enabled, total dice count is not tied to player count"
+    },
+    "reset": {
+      "confirm": "Reset all pools to zero?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "rollGmDie": {
+      "chatMessage": "GM rolled Crucible die: {result}"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<form class="crucible-move-dice-form">
+  <div class="form-group">
+    <label>{{localize "crucible.moveDice.direction"}}</label>
+    <select name="direction" required>
+      <option value="playerToGm">{{localize "crucible.moveDice.playerToGm"}}</option>
+      <option value="gmToPlayer">{{localize "crucible.moveDice.gmToPlayer"}}</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label>{{localize "crucible.moveDice.amount"}}</label>
+    <input type="number" name="amount" min="1" value="1" required>
+  </div>
+  
+  <div class="form-group crucible-error" style="display: none;"></div>
+  
+  <div class="form-group buttons">
+    <button type="submit" class="crucible-btn">
+      <i class="fas fa-exchange-alt"></i> {{localize "crucible.moveDice.submit"}}
+    </button>
+    <button type="button" class="crucible-btn" data-action="cancel">
+      {{localize "crucible.moveDice.cancel"}}
+    </button>
+  </div>
+</form>

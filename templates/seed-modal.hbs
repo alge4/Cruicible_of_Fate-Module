@@ -1,0 +1,34 @@
+<div class="crucible-seed-modal">
+  <div class="crucible-seed-instruction">
+    <p>{{localize "crucible.seed.instruction"}}</p>
+  </div>
+  
+  <div class="crucible-seed-controls">
+    <div class="form-group">
+      <input type="number" 
+             id="crucible-seed-input" 
+             min="1" 
+             max="6" 
+             value="" 
+             placeholder="1-6">
+    </div>
+    
+    <div class="form-group buttons">
+      <button type="button" class="crucible-btn crucible-btn-roll" data-action="roll">
+        <i class="fas fa-dice"></i> {{localize "crucible.seed.roll"}}
+      </button>
+      <button type="button" class="crucible-btn crucible-btn-submit" data-action="submit">
+        {{localize "crucible.seed.submit"}}
+      </button>
+      <button type="button" class="crucible-btn" data-action="cancel">
+        {{localize "crucible.seed.cancel"}}
+      </button>
+    </div>
+  </div>
+  
+  <div class="crucible-seed-status">
+    <p class="crucible-waiting" style="display: none;">{{localize "crucible.seed.waiting"}}</p>
+  </div>
+  
+  <div class="crucible-error" style="display: none;"></div>
+</div>
