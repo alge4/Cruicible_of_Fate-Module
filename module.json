@@ -2,7 +2,7 @@
   "id": "crucible-of-fate",
   "title": "Crucible of Fate",
   "description": "A visual, interactive system for Mark Hulmes' Crucible of Fate mechanic. Features communal dice pools, player roll augmentation, and comprehensive GM controls.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "compatibility": {
     "minimum": "11",
     "verified": "12"
@@ -32,7 +32,7 @@
     }
   ],
   "socket": true,
-  "url": "",
-  "manifest": "",
-  "download": ""
+  "url": "https://github.com/alge4/Cruicible_of_Fate-Module",
+  "manifest": "https://raw.githubusercontent.com/alge4/Cruicible_of_Fate-Module/main/module.json",
+  "download": "https://github.com/alge4/Cruicible_of_Fate-Module/releases/download/v0.1.2/crucible-of-fate-v0.1.2.zip"
 }

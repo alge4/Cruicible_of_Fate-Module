@@ -1,0 +1,21 @@
+{
+  "name": "crucible-of-fate",
+  "version": "0.1.0",
+  "description": "A visual, interactive system for Mark Hulmes' Crucible of Fate mechanic for Foundry VTT",
+  "scripts": {
+    "release": "powershell -ExecutionPolicy Bypass -File ./release.ps1",
+    "release:patch": "powershell -ExecutionPolicy Bypass -File ./release.ps1 -Patch",
+    "release:minor": "powershell -ExecutionPolicy Bypass -File ./release.ps1 -Minor",
+    "release:major": "powershell -ExecutionPolicy Bypass -File ./release.ps1 -Major",
+    "release:version": "powershell -ExecutionPolicy Bypass -File ./release.ps1 -Version"
+  },
+  "keywords": [
+    "foundryvtt",
+    "foundry-vtt",
+    "crucible-of-fate",
+    "dnd",
+    "dnd5e"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
